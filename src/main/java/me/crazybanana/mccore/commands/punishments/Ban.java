@@ -34,6 +34,8 @@ public class Ban implements CommandExecutor {
                 Bukkit.getPlayer(args[0]).kickPlayer(mcToString(reason));
                 sender.sendMessage(prefix + "§a Successfully§c banned§6 " + args[0] + " for§d " + mcToString(reason));
                 reason.clear();
+            } else {
+                sender.sendMessage(plugin.getConfig().getString("Prefix") + "§c You don't have§6 permission§c to run that command!");
             }
         } else {
             sender.sendMessage(prefix + "§c Incorrect Usage§6!§d /ban <user> <reason>");

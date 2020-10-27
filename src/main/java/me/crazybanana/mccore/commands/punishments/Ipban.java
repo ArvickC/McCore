@@ -25,7 +25,7 @@ public class Ipban implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(args.length > 1) {
-            if(sender.hasPermission("mc.punish.*") || sender.hasPermission("mc.punish.ban") || sender.hasPermission("mc.rank.senioradmin")) {
+            if(sender.hasPermission("mc.punish.*") || sender.hasPermission("mc.punish.ipban") || sender.hasPermission("mc.rank.senioradmin")) {
                 for(int i=1;i<args.length;i++) {
                     reason.add(args[i]);
                 }
@@ -34,9 +34,11 @@ public class Ipban implements CommandExecutor {
                 Bukkit.getPlayer(args[0]).kickPlayer(mcToString(reason));
                 sender.sendMessage(prefix + "§a Successfully§c banned§6 " + args[0] + " for§d " + mcToString(reason));
                 reason.clear();
+            } else {
+                sender.sendMessage(plugin.getConfig().getString("Prefix") + "§c You don't have§6 permission§c to run that command!");
             }
         } else {
-            sender.sendMessage(prefix + "§c Incorrect Usage§6!§d /ban <user> <reason>");
+            sender.sendMessage(prefix + "§c Incorrect Usage§6!§d /ipban <user> <reason>");
         }
         return false;
     }

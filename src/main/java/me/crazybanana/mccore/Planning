@@ -82,7 +82,7 @@ Commands
     Punishments (/mod GUI) [mc.punish.*]
     --
     /ban <player> [reason] (senior admin) [mc.punish.ban] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    /ipban <player> [reason] (senior admin) [mc.punish.ipban]
+    /ipban <player> [reason] (senior admin) [mc.punish.ipban] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     /mute <player> <reason> (senior admin) [mc.punish.mute]
     /tempban <player> <duration> <reason> (moderator) [mc.punish.tempban]
     /tempmute <player> <duration> <reason> (moderator) [mc.punish.tempmute]

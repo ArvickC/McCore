@@ -23,6 +23,8 @@ public class Mcorereload implements CommandExecutor {
             Bukkit.getServer().getPluginManager().enablePlugin(plugin);
             plugin.reloadConfig();
             sender.sendMessage(plugin.getConfig().getString("Prefix") + "§6 Plugin Reloaded");
+        } else {
+            sender.sendMessage(plugin.getConfig().getString("Prefix") + "§c You don't have§6 permission§c to run that command!");
         }
         return false;
     }
