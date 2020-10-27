@@ -16,11 +16,7 @@ public final class McCore extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
 
-        // Plugin Setup
-        getCommands();
-    }
-
-    private void getCommands() {
+        // Command Setup
         getCommand("mcorereload").setExecutor(reload);
         getCommand("ban").setExecutor(ban);
         Bukkit.getConsoleSender().sendMessage(getConfig().getString("Prefix") + "§6 Commands activated");

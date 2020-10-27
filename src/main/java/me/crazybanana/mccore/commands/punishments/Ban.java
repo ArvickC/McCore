@@ -13,12 +13,13 @@ public class Ban implements CommandExecutor {
     // Var
     private McCore plugin = null;
     private ArrayList<String> reason = new ArrayList<String>();
+    String prefix;
 
     // Constructor
     public Ban(McCore plugin) {
         this.plugin = plugin;
+        prefix = plugin.getConfig().getString("Prefix");
     }
-    String prefix = plugin.getConfig().getString("Prefix");
 
     // Command
     @Override
