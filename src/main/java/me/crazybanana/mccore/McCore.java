@@ -6,10 +6,11 @@ import me.crazybanana.mccore.commands.punishments.Mute;
 import me.crazybanana.mccore.commands.staff.Mcorereload;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class McCore extends JavaPlugin {
+public final class McCore extends JavaPlugin implements Listener {
     // Var
     Mcorereload reload = new Mcorereload(this);
     Ban ban = new Ban(this);
@@ -22,6 +23,9 @@ public final class McCore extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
 
+        // Events Setup
+        getServer().getPluginManager().registerEvents(this, this);
+
         // Command Setup
         getCommand("mcorereload").setExecutor(reload);
         getCommand("ban").setExecutor(ban);
@@ -33,8 +37,9 @@ public final class McCore extends JavaPlugin {
     // Events
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {
-        if(mute.muted.contains(e.getPlayer().toString())) {
+        if(mute.muted.contains(e.getPlayer())) {
             e.setCancelled(true);
+            e.getPlayer().sendMessage(getConfig().getString("Prefix") + " §cYou are muted§6!");
         }
     }
 }
