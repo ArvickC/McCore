@@ -9,14 +9,14 @@ import org.bukkit.command.CommandSender;
 
 import java.util.ArrayList;
 
-public class Ban implements CommandExecutor {
+public class Ipban implements CommandExecutor {
     // Var
     private McCore plugin = null;
     private ArrayList<String> reason = new ArrayList<String>();
     String prefix;
 
     // Constructor
-    public Ban(McCore plugin) {
+    public Ipban(McCore plugin) {
         this.plugin = plugin;
         prefix = plugin.getConfig().getString("Prefix");
     }
@@ -30,7 +30,7 @@ public class Ban implements CommandExecutor {
                     reason.add(args[i]);
                 }
                 Bukkit.getConsoleSender().sendMessage(mcToString(reason));
-                Bukkit.getBanList(BanList.Type.NAME).addBan(args[0], mcToString(reason), null, sender.toString());
+                Bukkit.getBanList(BanList.Type.IP).addBan(args[0], mcToString(reason), null, sender.toString());
                 Bukkit.getPlayer(args[0]).kickPlayer(mcToString(reason));
                 sender.sendMessage(prefix + "§a Successfully§c banned§6 " + args[0] + " for§d " + mcToString(reason));
                 reason.clear();
