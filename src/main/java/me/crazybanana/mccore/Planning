@@ -1,12 +1,12 @@
 Ranking
 
     Ranks:
-    - Owner(same as manager, but a higher priority, set in config)
-    - Manager(Set in config)
-    - Developer(Set in config)
-    - Senior Admin
-    - Moderator
-    - OP (Default) (Free | After tutorial)
+    - Owner(same as manager, but a higher priority, set in config) [mc.rank.owner]
+    - Manager(Set in config) [mc.rank.manager]
+    - Developer(Set in config) [mc.rank.developer]
+    - Senior Admin [mc.rank.senioradmin]
+    - Moderator [mc.rank.moderator]
+    - OP (Default) (Free | After tutorial) [mc.rank.default]
 
     Tutorial:
     - The people will be teleported around the lobby with titles
@@ -72,50 +72,51 @@ Regions
 
 Commands
 
-    Ranking
+    Ranking [mc.rank.*]
     --
-    /rank <player> MODERATOR||SENIOR_ADMIN
-    /unrank <player> MODERATOR||SENIOR_ADMIN
+    /rank <player> MODERATOR||SENIOR_ADMIN (manger) [mc.rank]
+    /unrank <player> MODERATOR||SENIOR_ADMIN (manager) [mc.unrank]
 
-    Punishments
+    Punishments (/mod GUI) [mc.punish.*]
     --
-    /ban <player> [reason] (senior admin)
-    /tempban <player> <duration> <reason> (moderator)
-    /tempmute <player> <duration> <reason> (moderator)
-    /unmute <player>(moderator)
-    /unban <player> : Unbans a player(senior admin)
-    /smite <player> <reason> : strikes them with lightening, kills them, clears the inv.(moderator)
-    /trap <player> : traps them in a cage and blocks their commands.(moderator)
-    /freeze <player||all> : Prevents them from moving.(senior admin)
+    /ban <player> [reason] (senior admin) [mc.punish.ban]
+    /mute <player> <reason> (senior admin) [mc.punish.mute]
+    /tempban <player> <duration> <reason> (moderator) [mc.punish.tempban]
+    /tempmute <player> <duration> <reason> (moderator) [mc.punish.tempmute]
+    /unmute <player>(moderator) [mc.punish.unmute]
+    /unban <player> : Unbans a player(senior admin) [mc.punish.unban]
+    /smite <player> <reason> : strikes them with lightening, kills them, clears the inv.(moderator) [mc.punish.smite]
+    /trap <player> : traps them in a cage and blocks their commands.(moderator) [mc.punish.trap]
+    /freeze <player||all> : Prevents them from moving.(senior admin) [mc.punish.freeze]
 
-    FreeOP
+    FreeOP [mc.freeop.*]
     --
-    /opall : gives everyone OP Rank (moderator)
-    /deopall : removes everyone’s op rank except staff.(manager)
-    /mcrl : reloads the plugin(manager)
+    /opall : gives everyone OP Rank (moderator) [mc.freeop.opall]
+    /deopall : removes everyone’s op rank except staff.(manager) [mc.freeop.deopall]
+    /mcrl : reloads the plugin(manager) [mc.freeop.reload]
 
-    Staff
+    Staff (/mod) [mc.staff.*]
     --
-    /blockcmd <player> : prevents them from running commands(mod)
-    /blockpvp <player> : Prevents them from pvping(mod)
-    /blockedit <player> : Prevents them from using w/e(mod)
-    /staffchat(/sc) [message] : toggles staffchat or sends a message(mod)
-    /vanish : prevents them from being seen by players except staff(mod)
-    /announce <message> : broadcasts a message
-    /banlist : shows the list of bans.
-    /blockredstone : Toggles usage of redstone(mod)
-    /clearchat : Clears the chat(senior admin)
-    /cmdspy : Spies on other people’s commands(mod)
-    /purgeall : clears player data(senior admin)
-    /lockdown : locks the server to non-staff(senior admin)
-    /kickall : kicks all non-staff(senior admin)
-    /setlogin <message> : sets their login message, which is sent everytime they join, default is:
-    &aplayer &2is a &arank
-    /setlimit <amount> : sets the max amount blocks allowed to be changed via w/e(senior admin)
+    /blockcmd <player> : prevents them from running commands(mod) [mc.staff.blockcmd]
+    /blockpvp <player> : Prevents them from pvping(mod) [mc.staff.blockpvp]
+    /blockedit <player> : Prevents them from using w/e(mod) [mc.staff.blockedit]
+    /staffchat(/sc)(# {config}) [message] : toggles staffchat or sends a message(mod) [mc.staff.staffchat]
+    /vanish <player>: prevents them from being seen by players except staff(mod) [mc.staff.vanish]
+    /announce <message> : broadcasts a message(senior admins) [mc.staff.broadcast]
+    /banlist : shows the list of bans.(mods) [mc.staff.banlist]
+    /blockredstone : Toggles usage of redstone(mod) [mc.staff.blockredstone]
+    /clearchat : Clears the chat(senior admin) [mc.staff.clearchat]
+    /cmdspy : Spies on other people’s commands(mod) [mc.staff.cmdspy]
+    /purgeall : /minecraft:kill @e[type!=player] (senior admin) [mc.staff.purge]
+    /lockdown : locks the server to non-staff(senior admin) [mc.staff.lockdown]
+    /kickall <reason> : kicks all non-staff(senior admin) [mc.staff.kickall]
+    /setlogin <message> : sets their login message, which is sent everytime they join, default is:  (mods) [mc.staff.setlogin]
+    &aplayer &2is a(n) &arank
+    /setlimit <amount> : sets the max amount blocks allowed to be changed via w/e(senior admin) [mc.staff.setlimit]
 
-    Player Commands
+    Player Commands [mc.player.*]
     --
-    /nick <name>
-    /tag <tag>
-    /links : views social media links & stuff, configurable.
-    /report <player> : sends a report to online staff, and makes a file.
+    /nick <name> [mc.player.nick]
+    /tag <tag> [mc.player.tag]
+    /links : views social media links & stuff, configurable. [mc.player.links]
+    /report <player> : sends a report to online staff, and makes a file. [mc.player.report]
