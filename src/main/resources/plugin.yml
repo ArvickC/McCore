@@ -1,0 +1,6 @@
+name: McCore
+version: ${project.version}
+main: me.crazybanana.mccore.McCore
+api-version: 1.16
+authors: [CrazyBanana]
+description: This is the core plugin for MC
