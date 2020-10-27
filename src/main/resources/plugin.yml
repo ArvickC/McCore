@@ -1,6 +1,10 @@
 name: McCore
-version: 1.0.2
+version: 1.1.0
 main: me.crazybanana.mccore.McCore
 api-version: 1.16
 authors: [CrazyBanana]
 description: This is the core plugin for MC
+commands:
+  mcorereload:
+    description: Use this command to reload the plugin
+    aliases: [mcorerl, mcreload, mcrl]

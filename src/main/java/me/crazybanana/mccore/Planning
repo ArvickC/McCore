@@ -1,5 +1,4 @@
 Ranking
-
     Ranks:
     - Owner(same as manager, but a higher priority, set in config) [mc.rank.owner]
     - Manager(Set in config) [mc.rank.manager]
@@ -42,6 +41,9 @@ Ranking
           - 'essentials.some.permission'
 
         #commands are premade, no ingame creation.
+
+More
+    Link it with discord, (chat and commands)
 
 Punishments
     These include:
@@ -93,10 +95,10 @@ Commands
     --
     /opall : gives everyone OP Rank (moderator) [mc.freeop.opall]
     /deopall : removes everyone’s op rank except staff.(manager) [mc.freeop.deopall]
-    /mcrl : reloads the plugin(manager) [mc.freeop.reload]
 
     Staff (/mod) [mc.staff.*]
     --
+    /mcrl : reloads the plugin(manager) [mc.staff.reload] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     /blockcmd <player> : prevents them from running commands(mod) [mc.staff.blockcmd]
     /blockpvp <player> : Prevents them from pvping(mod) [mc.staff.blockpvp]
     /blockedit <player> : Prevents them from using w/e(mod) [mc.staff.blockedit]
