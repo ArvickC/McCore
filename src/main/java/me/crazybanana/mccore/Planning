@@ -1,0 +1,121 @@
+Ranking
+
+    Ranks:
+    - Owner(same as manager, but a higher priority, set in config)
+    - Manager(Set in config)
+    - Developer(Set in config)
+    - Senior Admin
+    - Moderator
+    - OP (Default) (Free | After tutorial)
+
+    Tutorial:
+    - The people will be teleported around the lobby with titles
+
+    Each rank will have blocked commands(except Owner and Manager)
+
+    Config for ranks:
+        developer:
+          block-default: true#scroll down to find  what this means.
+          list:
+          - Player1
+          rank-specific-blocked-commands:
+          - '/somecommand that is blocked only for devs'
+          permissions:
+          - 'essentials.some.permission'
+        senior_admin:
+          block-default: true
+          rank-specific-blocked-commands:
+          - '/somecommand that is blocked only for sra's'
+          permissions:
+          - 'essentials.some.permission'
+        moderator:
+          block-default: true
+          rank-specific-blocked-commands:
+          - '/somecommand that is blocked only for mods'
+          permissions:
+          - 'essentials.some.permission'
+        default-blocked-commands:
+          - '/stop'#commmands are blocked for everyone except manager and owner and those who don't have block=default
+          - '/reload'
+        default-permissions:
+        #everyone will have this perms
+          - 'essentials.some.permission'
+
+        #commands are premade, no ingame creation.
+
+Punishments
+    These include:
+      - mutes (moderator)
+      - bans(SRA)
+      - IPBans (SRA)
+      - smite(kills the user, strikes lightening, clears the player's inv) (moderator)
+
+    If mods can do /mute then sra can do so as well, sra will have mod perms.
+
+Regions
+
+    there will be 3 world guard regions:(set in config)
+
+    1. PVP
+    2. grief
+    3. safezone
+
+    In pvp zone they are not allowed to be in gmc or god mode. Unless they have the permission.
+
+    In grief area they are not allowed to be in gmc.
+
+    In safezone, they are not allowed to pvp
+
+    before entering each 'zone'
+    the plugin will send a message:
+    '<player> are you sure you want to enter this region?' it wont let them enter otherwise.
+
+Commands
+
+    Ranking
+    --
+    /rank <player> MODERATOR||SENIOR_ADMIN
+    /unrank <player> MODERATOR||SENIOR_ADMIN
+
+    Punishments
+    --
+    /ban <player> [reason] (senior admin)
+    /tempban <player> <duration> <reason> (moderator)
+    /tempmute <player> <duration> <reason> (moderator)
+    /unmute <player>(moderator)
+    /unban <player> : Unbans a player(senior admin)
+    /smite <player> <reason> : strikes them with lightening, kills them, clears the inv.(moderator)
+    /trap <player> : traps them in a cage and blocks their commands.(moderator)
+    /freeze <player||all> : Prevents them from moving.(senior admin)
+
+    FreeOP
+    --
+    /opall : gives everyone OP Rank (moderator)
+    /deopall : removes everyone’s op rank except staff.(manager)
+    /mcrl : reloads the plugin(manager)
+
+    Staff
+    --
+    /blockcmd <player> : prevents them from running commands(mod)
+    /blockpvp <player> : Prevents them from pvping(mod)
+    /blockedit <player> : Prevents them from using w/e(mod)
+    /staffchat(/sc) [message] : toggles staffchat or sends a message(mod)
+    /vanish : prevents them from being seen by players except staff(mod)
+    /announce <message> : broadcasts a message
+    /banlist : shows the list of bans.
+    /blockredstone : Toggles usage of redstone(mod)
+    /clearchat : Clears the chat(senior admin)
+    /cmdspy : Spies on other people’s commands(mod)
+    /purgeall : clears player data(senior admin)
+    /lockdown : locks the server to non-staff(senior admin)
+    /kickall : kicks all non-staff(senior admin)
+    /setlogin <message> : sets their login message, which is sent everytime they join, default is:
+    &aplayer &2is a &arank
+    /setlimit <amount> : sets the max amount blocks allowed to be changed via w/e(senior admin)
+
+    Player Commands
+    --
+    /nick <name>
+    /tag <tag>
+    /links : views social media links & stuff, configurable.
+    /report <player> : sends a report to online staff, and makes a file.
