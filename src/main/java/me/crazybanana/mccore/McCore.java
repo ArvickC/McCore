@@ -10,12 +10,12 @@ public final class McCore extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin Setup
-        getCommands();
-
         // Config
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
+
+        // Plugin Setup
+        getCommands();
     }
 
     private void getCommands() {
