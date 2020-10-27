@@ -1,4 +1,4 @@
-package me.crazybanana.mccore.commands;
+package me.crazybanana.mccore.commands.staff;
 
 import me.crazybanana.mccore.McCore;
 import org.bukkit.Bukkit;
