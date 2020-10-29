@@ -1,6 +1,7 @@
 package me.crazybanana.mccore.commands.staff;
 
 import me.crazybanana.mccore.McCore;
+import me.crazybanana.mccore.files.MutedFile;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -22,6 +23,7 @@ public class Mcorereload implements CommandExecutor {
             Bukkit.getServer().getPluginManager().disablePlugin(plugin);
             Bukkit.getServer().getPluginManager().enablePlugin(plugin);
             plugin.reloadConfig();
+            MutedFile.muteReload();
             sender.sendMessage(plugin.getConfig().getString("Prefix") + "§6 Plugin Reloaded");
         } else {
             sender.sendMessage(plugin.getConfig().getString("Prefix") + "§c You don't have§6 permission§c to run that command!");

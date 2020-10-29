@@ -1,2 +1,5 @@
 # This is a prefix that will be used.
 Prefix: '§8[§2Mc Core§8]'
+
+# If this is true, then people will not be able to run commands whilst muted.
+Mute-Commands: false
