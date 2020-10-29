@@ -25,8 +25,15 @@ public final class McCore extends JavaPlugin implements Listener {
     Ban ban = new Ban(this);
     Ipban ipban = new Ipban(this);
     Mute mute = new Mute(this);
+
     //ArrayList<Player> playerList = new ArrayList<>();
     List<String> playerList = new ArrayList<>();
+    List<String> muted = new ArrayList<>();
+
+    public String normal = "§" + getConfig().getConfigurationSection("Color").getString("Normal");
+    public String highlight = "§" + getConfig().getConfigurationSection("Color").getString("Highlighted");
+    public String success = "§" + getConfig().getConfigurationSection("Color").getString("Success");
+    public String error = "§" + getConfig().getConfigurationSection("Color").getString("Error");
 
     @Override
     public void onEnable() {
@@ -51,7 +58,7 @@ public final class McCore extends JavaPlugin implements Listener {
         getCommand("ban").setExecutor(ban);
         getCommand("ipban").setExecutor(ipban);
         getCommand("mute").setExecutor(mute);
-        Bukkit.getConsoleSender().sendMessage(getConfig().getString("Prefix") + "§6 Commands activated");
+        Bukkit.getConsoleSender().sendMessage(getConfig().getString("Prefix") + success + " Activated");
     }
 
     // Events
@@ -59,20 +66,19 @@ public final class McCore extends JavaPlugin implements Listener {
     public void onChat(AsyncPlayerChatEvent e) {
         Bukkit.getConsoleSender().sendMessage(getConfig().getString("Prefix") + e.getPlayer().toString());
         Bukkit.getConsoleSender().sendMessage(getConfig().getString("Prefix") + e.getPlayer().getUniqueId().toString());
-        playerList = MutedFile.get().getStringList("Muted");
-        if(playerList.contains(e.getPlayer().getUniqueId().toString())) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(getConfig().getString("Prefix") + " §cYou are muted§6!");
+        muted = MutedFile.get().getStringList("Muted");
+        for(int i=0;i<muted.size();i++) {
+            Bukkit.getConsoleSender().sendMessage(getConfig().getString("Prefix") + muted.get(i));
+            if(muted.get(i) == e.getPlayer().getUniqueId().toString()) {
+                e.setCancelled(true);
+                e.getPlayer().sendMessage(getConfig().getString("Prefix") + error + " You are muted" + normal + "!");
+            }
         }
+        muted.clear();
     }
 
     @EventHandler
     public void onCommand(PlayerCommandPreprocessEvent e) {
-        if(getConfig().getBoolean("Mute-Commands")) {
-            if (MutedFile.get().getStringList("Muted").contains(e.getPlayer().getUniqueId().toString())) {
-                e.setCancelled(true);
-                e.getPlayer().sendMessage(getConfig().getString("Prefix") + " §cYou are muted§6!");
-            }
-        }
+
     }
 }

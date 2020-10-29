@@ -23,6 +23,12 @@ public class Mute implements CommandExecutor {
         prefix = plugin.getConfig().getString("Prefix");
     }
 
+    // Var
+    public String normal = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Normal");
+    public String highlight = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Highlighted");
+    public String success = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Success");
+    public String error = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Error");
+
     // Command
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -33,13 +39,13 @@ public class Mute implements CommandExecutor {
                 MutedFile.get().set("Muted", muted);
                 MutedFile.save();
                 muted.clear();
-                sender.sendMessage(prefix + "§6 " + args[0] + "§d Muted§6!");
-                Bukkit.getPlayer(args[0]).sendMessage(prefix + "§c You have been muted by§d " + sender.getName());
+                sender.sendMessage(prefix + normal + " " + args[0] + highlight + " Muted" + normal + "!");
+                Bukkit.getPlayer(args[0]).sendMessage(prefix + error + " You have been muted by" + highlight + " " + sender.getName());
             } else {
-                sender.sendMessage(prefix + "§c Incorrect Usage§6!§d /mute <user>");
+                sender.sendMessage(prefix + error + " Incorrect Usage" + normal + "!" + highlight + " /mute <user>");
             }
         } else {
-            sender.sendMessage(plugin.getConfig().getString("Prefix") + "§c You don't have§6 permission§c to run that command!");
+            sender.sendMessage(plugin.getConfig().getString("Prefix") + error + " You don't have" + normal + " permission" + error + " to run that command!");
         }
         return false;
     }

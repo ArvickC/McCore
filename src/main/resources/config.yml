@@ -1,5 +1,12 @@
 # This is a prefix that will be used.
 Prefix: '§8[§2Mc Core§8]'
 
+# This is where you can edit the plugin's color scheme, you can use https://www.spigotmc.org/attachments/example2-png.188806/ for the color codes
+Color:
+  Normal: '6'
+  Highlighted: 'd'
+  Success: 'a'
+  Error: 'c'
+
 # If this is true, then people will not be able to run commands whilst muted.
 Mute-Commands: false

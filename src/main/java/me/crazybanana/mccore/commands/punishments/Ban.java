@@ -21,6 +21,12 @@ public class Ban implements CommandExecutor {
         prefix = plugin.getConfig().getString("Prefix");
     }
 
+    // Var
+    public String normal = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Normal");
+    public String highlight = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Highlighted");
+    public String success = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Success");
+    public String error = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Error");
+
     // Command
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -32,13 +38,13 @@ public class Ban implements CommandExecutor {
                 Bukkit.getConsoleSender().sendMessage(mcToString(reason));
                 Bukkit.getBanList(BanList.Type.NAME).addBan(args[0], mcToString(reason), null, sender.toString());
                 Bukkit.getPlayer(args[0]).kickPlayer(mcToString(reason));
-                sender.sendMessage(prefix + "§a Successfully§c banned§6 " + args[0] + " for§d " + mcToString(reason));
+                sender.sendMessage(prefix + success + " Successfully" + error + " banned" + normal + " " + args[0] + " for" + highlight + " " + mcToString(reason));
                 reason.clear();
             } else {
-                sender.sendMessage(plugin.getConfig().getString("Prefix") + "§c You don't have§6 permission§c to run that command!");
+                sender.sendMessage(plugin.getConfig().getString("Prefix") + error + " You don't have" + normal + " permission" + error + " to run that command!");
             }
         } else {
-            sender.sendMessage(prefix + "§c Incorrect Usage§6!§d /ban <user> <reason>");
+            sender.sendMessage(prefix + error + " Incorrect Usage" + normal + "!" + highlight + " /ban <user> <reason>");
         }
         return false;
     }

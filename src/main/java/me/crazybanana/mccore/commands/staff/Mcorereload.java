@@ -16,6 +16,12 @@ public class Mcorereload implements CommandExecutor {
         this.plugin = plugin;
     }
 
+    // Var
+    public String normal = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Normal");
+    public String highlight = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Highlighted");
+    public String success = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Success");
+    public String error = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Error");
+
     // Command
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -24,9 +30,9 @@ public class Mcorereload implements CommandExecutor {
             Bukkit.getServer().getPluginManager().enablePlugin(plugin);
             plugin.reloadConfig();
             MutedFile.muteReload();
-            sender.sendMessage(plugin.getConfig().getString("Prefix") + "§6 Plugin Reloaded");
+            sender.sendMessage(plugin.getConfig().getString("Prefix") + normal + " Plugin Reloaded");
         } else {
-            sender.sendMessage(plugin.getConfig().getString("Prefix") + "§c You don't have§6 permission§c to run that command!");
+            sender.sendMessage(plugin.getConfig().getString("Prefix") + error + " You don't have" + normal + " permission" + error + " to run that command!");
         }
         return false;
     }
