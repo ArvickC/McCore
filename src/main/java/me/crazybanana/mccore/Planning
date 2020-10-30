@@ -105,7 +105,7 @@ Commands
     /blockedit <player> : Prevents them from using w/e(mod) [mc.staff.blockedit]
     /staffchat(/sc)(# {config}) [message] : toggles staffchat or sends a message(mod) [mc.staff.staffchat]
     /vanish <player>: prevents them from being seen by players except staff(mod) [mc.staff.vanish]
-    /announce <message> : broadcasts a message(senior admins) [mc.staff.broadcast]
+    /announce <message> : broadcasts a message(senior admins) [mc.staff.announce] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     /banlist : shows the list of bans.(mods) [mc.staff.banlist]
     /blockredstone : Toggles usage of redstone(mod) [mc.staff.blockredstone]
     /clearchat : Clears the chat(senior admin) [mc.staff.clearchat]

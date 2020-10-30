@@ -1,5 +1,5 @@
 name: McCore
-version: 1.3.21
+version: 1.4.1
 main: me.crazybanana.mccore.McCore
 api-version: 1.16
 authors: [CrazyBanana]
@@ -17,3 +17,6 @@ commands:
   mute:
     description: Use this command to mute people on the server
     aliases: [mcmute]
+  announce:
+    description: Use this command to make announcements throughout the server
+    aliases: [ac, mcannounce, mcan, broadcast, bc, mcbroadcast, mcbc]

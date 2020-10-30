@@ -3,6 +3,7 @@ package me.crazybanana.mccore;
 import me.crazybanana.mccore.commands.punishments.Ban;
 import me.crazybanana.mccore.commands.punishments.Ipban;
 import me.crazybanana.mccore.commands.punishments.Mute;
+import me.crazybanana.mccore.commands.staff.Announce;
 import me.crazybanana.mccore.commands.staff.Mcorereload;
 import me.crazybanana.mccore.files.MutedFile;
 import org.bukkit.Bukkit;
@@ -25,6 +26,7 @@ public final class McCore extends JavaPlugin implements Listener {
     Ban ban = new Ban(this);
     Ipban ipban = new Ipban(this);
     Mute mute = new Mute(this);
+    Announce announce = new Announce(this);
 
     //ArrayList<Player> playerList = new ArrayList<>();
     List<String> playerList = new ArrayList<>();
@@ -58,6 +60,7 @@ public final class McCore extends JavaPlugin implements Listener {
         getCommand("ban").setExecutor(ban);
         getCommand("ipban").setExecutor(ipban);
         getCommand("mute").setExecutor(mute);
+        getCommand("announce").setExecutor(announce);
         Bukkit.getConsoleSender().sendMessage(getConfig().getString("Prefix") + success + " Activated");
     }
 
