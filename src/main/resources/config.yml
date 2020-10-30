@@ -1,21 +1,19 @@
 # This is a prefix that will be used.
 Prefix: '§8[§2Mc Core§8]'
 
-# This is where you can edit the plugin's color scheme, you can use https://www.spigotmc.org/attachments/example2-png.188806/ for the color codes
-Color:
-  Normal: '6'
-  Highlighted: 'd'
-  Success: 'a'
-  Error: 'c'
+# This is where you can edit the plugin's color scheme, you can use https://www.spigotmc.org/attachments/example2-png.188806/ for the color code
+Normal: '6'
+Highlighted: 'd'
+Success: 'a'
+Error: 'c'
 
 # If this is true, then people will not be able to run commands whilst muted.
 Mute-Commands: false
 
-Announcement:
-  # Enable if you want headers and closers to be enabled
-  Announcement-Headers-and-Closers: true
-  # Announcement Headers are what will appear Over and Under an announcement
-  Announcement-Header: '§m---------------------------'
-  Announcement-Closer: '§m---------------------------'
-  # The prefix that will show on an announcement
-  Announce-Prefix: '§8[§aAnnouncement§8]'
+# Enable if you want headers and closers to be enabled
+Announcement-Headers-and-Closers: true
+# Announcement Headers are what will appear Over and Under an announcement
+Announcement-Header: '§m---------------------------'
+Announcement-Closer: '§m---------------------------'
+# The prefix that will show on an announcement
+Announce-Prefix: '§8[§aAnnouncement§8]'

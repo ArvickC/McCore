@@ -23,10 +23,10 @@ public class Announce implements CommandExecutor {
     }
 
     // Var
-    public String normal = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Normal");
-    public String highlight = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Highlighted");
-    public String success = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Success");
-    public String error = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Error");
+    public String normal = "§" + plugin.getConfig().getString("Normal");
+    public String highlight = "§" + plugin.getConfig().getString("Highlighted");
+    public String success = "§" + plugin.getConfig().getString("Success");
+    public String error = "§" + plugin.getConfig().getString("Error");
 
     // Command
     @Override
@@ -41,14 +41,14 @@ public class Announce implements CommandExecutor {
                 }
 
                 for(int i=0;i<players.size();i++) {
-                    if(plugin.getConfig().getConfigurationSection("Announcement").getBoolean("Announcement-Headers-and-Closers")) {
-                        players.get(i).sendMessage(plugin.getConfig().getConfigurationSection("Announcement").getString("Announcement-Header"));
+                    if(plugin.getConfig().getBoolean("Announcement-Headers-and-Closers")) {
+                        players.get(i).sendMessage(plugin.getConfig().getString("Announcement-Header"));
                     }
 
-                    players.get(i).sendMessage(plugin.getConfig().getConfigurationSection("Announcement").getString("Announce-Prefix") + " " + message);
+                    players.get(i).sendMessage(plugin.getConfig().getString("Announce-Prefix") + " " + message);
 
-                    if(plugin.getConfig().getConfigurationSection("Announcement").getBoolean("Announcement-Headers-and-Closers")) {
-                        players.get(i).sendMessage(plugin.getConfig().getConfigurationSection("Announcement").getString("Announcement-Closer"));
+                    if(plugin.getConfig().getBoolean("Announcement-Headers-and-Closers")) {
+                        players.get(i).sendMessage(plugin.getConfig().getString("Announcement-Closer"));
                     }
                 }
                 message = " ";

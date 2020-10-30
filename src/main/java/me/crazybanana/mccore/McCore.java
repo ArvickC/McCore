@@ -32,10 +32,10 @@ public final class McCore extends JavaPlugin implements Listener {
     List<String> playerList = new ArrayList<>();
     List<String> muted = new ArrayList<>();
 
-    public String normal = "§" + getConfig().getConfigurationSection("Color").getString("Normal");
-    public String highlight = "§" + getConfig().getConfigurationSection("Color").getString("Highlighted");
-    public String success = "§" + getConfig().getConfigurationSection("Color").getString("Success");
-    public String error = "§" + getConfig().getConfigurationSection("Color").getString("Error");
+    public String normal = "§" + getConfig().getString("Normal");
+    public String highlight = "§" + getConfig().getString("Highlighted");
+    public String success = "§" + getConfig().getString("Success");
+    public String error = "§" + getConfig().getString("Error");
 
     @Override
     public void onEnable() {

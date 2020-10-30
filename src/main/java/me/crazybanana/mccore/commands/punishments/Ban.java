@@ -22,10 +22,10 @@ public class Ban implements CommandExecutor {
     }
 
     // Var
-    public String normal = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Normal");
-    public String highlight = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Highlighted");
-    public String success = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Success");
-    public String error = "§" + plugin.getConfig().getConfigurationSection("Color").getString("Error");
+    public String normal = "§" + plugin.getConfig().getString("Normal");
+    public String highlight = "§" + plugin.getConfig().getString("Highlighted");
+    public String success = "§" + plugin.getConfig().getString("Success");
+    public String error = "§" + plugin.getConfig().getString("Error");
 
     // Command
     @Override
